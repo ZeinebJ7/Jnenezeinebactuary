@@ -16,6 +16,7 @@ import java.time.LocalDate;
 public class Contrat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //n7ot type wrapper
     private Long idContrat;
 
     private LocalDate dateSignature;
@@ -26,11 +27,10 @@ public class Contrat {
 
     // One To One avec Reservation
     @OneToOne
-    @JoinColumn(name = "id_reservation")
     private Reservation reservation;
 
     // One To One avec Paiement
-    @OneToOne(mappedBy = "contrat", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "contrat", cascade = CascadeType.PERSIST)
     private Paiement paiement;
 
 }

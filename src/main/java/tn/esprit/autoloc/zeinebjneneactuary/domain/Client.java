@@ -31,6 +31,6 @@ public class Client {
 
     private LocalDate dateInscription;
 
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "client", cascade = CascadeType.PERSIST)
     private Set<Reservation> reservations = new HashSet<>();
 }

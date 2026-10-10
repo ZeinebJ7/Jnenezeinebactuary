@@ -32,7 +32,7 @@ public class Reservation {
 
     // Plusieurs réservations pour un véhicule
     @ManyToOne
-    @JoinColumn(name = "id_vehicule")
+ //ma4ir JoinColumn : mane5douch biha jimla
     private Vehicule vehicule;
 
     // One To One avec Contrat

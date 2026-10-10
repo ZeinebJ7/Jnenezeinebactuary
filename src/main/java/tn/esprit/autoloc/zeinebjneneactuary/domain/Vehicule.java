@@ -36,18 +36,18 @@ public class Vehicule {
 
     // Plusieurs véhicules appartiennent à une agence
     @ManyToOne
-    @JoinColumn(name = "id_agence")
     private Agence agence;
-
+//reservation howa l fils
     // Un véhicule peut avoir plusieurs maintenances
-    @OneToMany(mappedBy = "vehicule", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "vehicule")
     private Set<Maintenance> maintenances = new HashSet<>();
 
     // MANY TO MANY
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany()
     private Set<Equipement> equipements = new HashSet<>();
-
+//Equipement howa fils
     // Un véhicule peut avoir plusieurs réservations
-    @OneToMany(mappedBy = "vehicule", cascade = CascadeType.ALL)
+    //cascade all ma4ir 5tr fiha l merge mochkla (remove w persist w merge)
+    @OneToMany(mappedBy = "vehicule")
     private Set<Reservation> reservations = new HashSet<>();
 }

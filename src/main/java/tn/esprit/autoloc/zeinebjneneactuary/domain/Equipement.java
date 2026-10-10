@@ -21,6 +21,6 @@ public class Equipement {
     private String libelle;
 
     // MANY TO MANY - côté inverse
-    @ManyToMany(mappedBy = "equipements", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "equipements", cascade = CascadeType.PERSIST)
     private Set<Vehicule> vehicules = new HashSet<>();
 }
